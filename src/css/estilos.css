@@ -1,0 +1,105 @@
+body {
+    font-family: "ROYALTY", serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.informacoes{
+    display: none;
+}
+
+.informacoes.ativa{
+    display: block;
+}
+
+.conteudo{
+    display: flex;
+    color: #e8ede6;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.informacoes h1{
+    font-size: 35px;
+    color: #E62020;
+    margin-bottom: 80px;
+    font-family: "ROYALTY";
+    letter-spacing: 8px;
+}
+
+@font-face{
+    font-family: "ROYALTY";
+    src: url(../fontes/ROYALTY.ttf);
+}
+
+.informacoes .descricao{
+    width: 49%;
+    font-size: 18px;
+    line-height: 40px;
+    color: #ffcc33;
+    height: 300px;
+    overflow: auto;
+    padding-right: 15px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.botoes-carrossel .botao{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.botoes-carrossel .botao.selecionado{
+    background-color: #a6e0ae;
+}
+
+.imagem{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+}
+
+.imagem.ativa{
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main:after{
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
